@@ -138,10 +138,9 @@ wants — including a proprietary one. The intent is to keep the framework itsel
 everyone without dictating terms to the mods that sit on top of it.
 
 Third-party code is bundled or ported under its own terms — SMT and Ferrster (MIT, the vehicle
-anchor and struct layout), Dear ImGui (MIT), MinHook (BSD-2-Clause), and enginesound (MIT, the
-offline synth experiment). Full notices in
-[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); `mod/synth/engine_synth.hpp` stays under its
-upstream MIT license rather than the MPL.
+anchor and struct layout), Dear ImGui (MIT), and MinHook (BSD-2-Clause). Full notices in
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Everything else in this repository is
+MPL-2.0.
 
 ## Legal
 

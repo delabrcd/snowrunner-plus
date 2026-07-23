@@ -14,11 +14,15 @@ used to live in [[Changelog]]. For durable RE facts see [[Memory Map|Memory-Map]
 - **License: MPL-2.0** (`LICENSE`, per-file Exhibit A headers on all first-party sources).
   File-level copyleft keeps framework files open while leaving third-party modules free to
   choose their own terms. Rationale + upstream table on [[Prior Art|Prior-Art]].
-- **`THIRD-PARTY-NOTICES.md`** added, reproducing every upstream notice verbatim. **The
-  original licensing review had missed `DasEtwas/enginesound` (MIT)** — `mod/synth/
-  engine_synth.hpp` is a C++ port of it and `tools/synth/presets/*.epreset` are converted from
-  its presets. That file stays MIT (not MPL); the ported synth is **not shipped** (the Baldan
-  waveguide model doesn't sound right for diesels; absent from `mod/CMakeLists.txt`).
+- **`THIRD-PARTY-NOTICES.md`** added, reproducing every upstream notice verbatim (SMT,
+  Ferrster, Dear ImGui, MinHook).
+- **enginesound port deleted.** The original licensing review had missed
+  `DasEtwas/enginesound` (MIT): `mod/synth/engine_synth.hpp` was a C++ port of it and
+  `tools/synth/presets/*.epreset` were converted from its presets. The Baldan waveguide model
+  **doesn't sound right for diesels** and was never in `mod/CMakeLists.txt`, so it was removed
+  (`engine_synth.hpp`, `synth_test.cpp`, `parse_esc.py`, `presets/`) rather than carried for
+  an attribution we don't need. Our own synth research (`engine_synth.py`, `engine_match.py`,
+  `analyze_p16.py`) is independent of it and stays. See [[Prior Art|Prior-Art]].
 - **No machine-specific paths are committed any more.** Hardcoded install paths in 17 files
   (plus scratchpad paths carrying the username) are replaced by a single resolution point:
   `tools/_env.sh` (shell) + `tools/srenv.py` (python) → `$SR_GAME` → gitignored `.env.local`

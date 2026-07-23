@@ -36,5 +36,3 @@ tools/dev/frida.config
 # Runtime telemetry trace written by the Frida script (20-rpm.js); regenerate by driving
 tools/dev/rpm.csv
 
-# Compiled test harnesses
-mod/synth/synth_test

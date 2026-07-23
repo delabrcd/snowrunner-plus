@@ -50,19 +50,24 @@ other people's mods.
 |---|---|---|
 | drafty46/SMT | MIT © 2025 drafty46 | `TRUCK_CONTROL` AOB anchor in `mod/src/mem.cpp` |
 | Ferrster/Snowrunner-Manual-Gearbox-Mod | MIT © 2015 Lopanov Vladislav Alekseevich | vehicle struct layout |
-| **DasEtwas/enginesound** | **MIT © 2020 DasEtwas** | `mod/synth/engine_synth.hpp` is a **C++ port**; `tools/synth/parse_esc.py` reads its `.esc` format; `tools/synth/presets/*.epreset` are converted from its presets |
 | Dear ImGui | MIT © 2014-2025 Omar Cornut | `mod/vendor/imgui/` (overlay) |
 | MinHook | BSD-2-Clause © 2009-2017 Tsuda Kageyu | `mod/vendor/minhook/` (hooking) |
 
-> **enginesound was missed by the original review** (2026-07-22). The review above covered only
-> SMT / Ferrster / Noclip, but `engine_synth.hpp` is a direct port of enginesound and the
-> committed `.epreset` files are derived from its presets — both MIT works needing attribution.
-> Now recorded and attributed. That file stays under **MIT**, not MPL, since it is a derivative.
+> **enginesound: ported, then removed** (2026-07-22). The original review covered only
+> SMT / Ferrster / Noclip and missed **DasEtwas/enginesound** (MIT) — `mod/synth/
+> engine_synth.hpp` was a direct C++ port of it (Baldan waveguide model) and the committed
+> `.epreset` files were converted from its presets, both MIT works needing attribution.
 >
-> **The ported synth is not used.** The Baldan waveguide model doesn't sound right for diesels
-> and is not in `mod/CMakeLists.txt` — it remains offline research (`mod/synth/synth_test`).
-> The obligation still stands while the source is published; it would only lapse if the ported
-> files were removed from the repo.
+> The model **doesn't sound right for diesels**, was never wired into `mod/CMakeLists.txt`,
+> and has been **deleted** (`engine_synth.hpp`, `synth_test.cpp`, `parse_esc.py`,
+> `presets/*.epreset`). With the derived files gone the attribution obligation lapses, so
+> enginesound is no longer listed in `THIRD-PARTY-NOTICES.md`. **Re-porting any of it means
+> restoring that notice.**
+>
+> Our own synthesis research is unaffected and stays: `tools/synth/engine_synth.py` (impulse
+> train + resonators — an independent model, not the waveguide one), `engine_match.py`
+> (source-filter matched to real game recordings), and `analyze_p16.py` (game-audio spectral
+> analysis, which produced the [[Audio Pipeline|Audio-Pipeline]] layer findings).
 
 ## Reusable intel
 
