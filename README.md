@@ -69,6 +69,8 @@ rebuild the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
 ![The SnowRunner+ dashboard: tachometer with redline and shift markers, gear panel, and shifter
 strip, drawn over the running game](docs/media/dashboard.jpg)
 
+<video src="https://github.com/delabrcd/snowrunner-plus/raw/main/docs/media/dashboard.mp4" controls muted loop width="100%"></video>
+
 ▶ **[Watch it in motion (15s, MP4)](docs/media/dashboard.mp4)** — the needle tracking real RPM
 and dropping on each upshift as the box runs up through the gears. (GitHub can't play video
 inline in a README, so this is a click-through.)
