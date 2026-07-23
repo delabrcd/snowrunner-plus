@@ -10,6 +10,14 @@ This wiki is the single source of truth for *what we found in the binary*, so it
 re-explained session to session. If a fact here disagrees with your memory, the wiki wins —
 update it.
 
+> **⚠️ Project state: early development.** There is no release and nothing here is installable
+> as a normal mod. The drivetrain logic (RPM, audio takeover, auto-box) runs in the **Frida dev
+> harness** (`tools/dev/src/`), not the C++ DLL — which today builds only the overlay, and the
+> overlay just *renders* telemetry the harness publishes over shm. The RPM denominator is still
+> unresolved per-truck ([[Open Problems|Open-Problems]]). Much of what follows describes
+> **design intent and confirmed RE facts**, not shipped behavior; per-feature reality lives on
+> [[Features]] with ✅ / 🔨 / 📋 markers.
+
 > **Confirmed-only rule.** Every page here is for things we **definitely know** (live-validated,
 > decompiled, or first-party documented). Unproven hypotheses, guesses, and open plans go on the
 > [[Speculation / TBD|Speculation]] page — never stated as fact on a knowledge page. Confirm an

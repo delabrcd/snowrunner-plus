@@ -1,17 +1,36 @@
 # SnowRunner+
 
+> ## ⚠️ Early development — not usable as a mod yet
+>
+> This is a **reverse-engineering project in progress**, not something you can install and
+> play. There is no release, and the pieces that make it interesting don't run as a normal
+> mod:
+>
+> - **The drivetrain logic lives in a Frida development harness**, not in the shippable DLL.
+>   RPM synthesis, the engine-audio takeover, and the automatic gearbox are JavaScript in
+>   `tools/dev/src/`, injected via a Frida gadget. Getting them running means a dev setup, not
+>   a drop-in install.
+> - **The C++ DLL currently builds only the overlay** (plus an optional XAudio2 hook) — and
+>   the overlay is a *renderer*: it reads telemetry over shared memory that the Frida harness
+>   writes. Without the harness it draws nothing.
+> - **The core RPM model isn't finished.** The per-truck gear-cap scale is unresolved, so the
+>   denominator is currently *learned* per gear as a stopgap and there's an unexplained ~2×
+>   factor. RPM is smooth and wheelspin-aware, but not yet correct across all trucks.
+>   See [Open-Problems](wiki/Open-Problems.md).
+>
+> What genuinely works is documented per feature, with honest status markers, in
+> [Features](wiki/Features.md). Treat everything below as the design intent and the current
+> research state — not a description of a working product.
+
 A modular modding **framework** for the Havok / Saber "Husky" engine family, plus the first
-module built on it: a **drivetrain mod** that gives SnowRunner a real, gear-aware engine RPM —
-driving the sound and the shift logic — and an **in-game dashboard** showing the truck
+module built on it: a **drivetrain mod** aiming to give SnowRunner a real, gear-aware engine
+RPM — driving the sound and the shift logic — and an **in-game dashboard** showing truck
 telemetry the stock HUD leaves out.
 
-The framework exists so mod authors don't each have to re-derive injection, offsets, overlay
-rendering, and input plumbing. It ships as a single Windows DLL: framework services plus
-bundled modules.
-
-> **Status:** actively developed, not yet released. The overlay, manual shifter, clutch, and
-> input/bind system are live-verified in-game; RPM, engine audio, the automatic gearbox, and
-> the drivetrain controls are built and in tuning. See [Features](wiki/Features.md).
+The framework's goal is that mod authors don't each have to re-derive injection, offsets,
+overlay rendering, and input plumbing. The intended end state is a single Windows DLL carrying
+framework services plus bundled modules; today that DLL hosts the overlay, and the rest is
+still being proven out in the harness.
 
 ## The problem
 
@@ -31,22 +50,28 @@ the auto-box hunts in a continuous drone. It sounds like a CVT, not a diesel.
 
 The physics bodies *do* simulate the true rotational state — a truck stuck in mud spins its
 tires fast while the chassis barely moves. That real wheel spin is fully observable; it just
-never reaches the sound or the shift logic. So the mod:
+never reaches the sound or the shift logic. So the mod aims to:
 
-1. **Derives a faithful engine RPM** from the live physics —
+1. **Derive a faithful engine RPM** from the live physics —
    `wheel_angular_velocity / gear_ratio(gear)`, clamped `[idle, redline]`, wheelspin-aware.
-2. **Fixes the sound simulation** so pitch, layer crossfade, and shift points follow that RPM
-   instead of ground speed — restoring the missing rev-drop on every upshift.
-3. **Puts a real dashboard on screen** — the truck telemetry the stock HUD never shows.
+   *Working in the harness; the per-truck denominator scale is still open.*
+2. **Fix the sound simulation** so pitch, layer crossfade, and shift points follow that RPM
+   instead of ground speed — restoring the missing rev-drop on every upshift. *In tuning.*
+3. **Put a real dashboard on screen** — the truck telemetry the stock HUD never shows.
+   *Working, and the most complete piece.*
 
-We **synthesize** a correct RPM from state the running game already has. We do **not** rebuild
-the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
+The idea is to **synthesize** a correct RPM from state the running game already has, and not to
+rebuild the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
 [Audio-Pipeline](wiki/Audio-Pipeline.md).
 
 ## The dashboard
 
-The most mature part of the mod, and useful on its own: an in-game overlay (Steam-overlay
-style, ImGui over `IDXGISwapChain::Present`) showing drivetrain state the game keeps hidden.
+The most complete part of the project: an in-game overlay (Steam-overlay style, ImGui over
+`IDXGISwapChain::Present`) showing drivetrain state the game keeps hidden. Live-verified under
+DXVK/Proton.
+
+It is a **renderer, not a data source** — it displays telemetry the Frida harness publishes
+over shared memory, so it needs that harness running to show anything.
 
 - **Tachometer** reading the real gear-aware RPM, with a redline zone the needle pushes past
   and up/down shift-point markers when the gearbox is ours.
@@ -90,13 +115,15 @@ unproven hypotheses live on [Speculation](wiki/Speculation.md).
 ## Layout
 
 ```
-mod/        the shippable DLL — framework services + modules (C++/CMake, vendored imgui + minhook)
+mod/        the C++ DLL (CMake, vendored imgui + minhook) — today: overlay + XAudio2 hook.
+            Intended to grow into framework services + bundled modules.
 tools/
-  dev/      Frida recon script, assembled from src/ by build.sh
+  dev/      the Frida harness that currently does the real work (RPM, audio, auto-box,
+            telemetry). src/*.js -> memexplore.js via build.sh
   re/       Ghidra headless scripts (decompile / hunt / label passes)
-  synth/    engine-audio synthesis + spectral matching
+  synth/    engine-audio analysis + synthesis experiments (research, not shipped)
   model/    RPM model fitting
-  auto/     autonomous run/health helpers
+  auto/     run/health helpers
 docs/
   evidence/ reproducible extracts from the local install (XML, exe strings, env)
 wiki/       all project prose — see above
@@ -107,19 +134,34 @@ Not tracked here: game assets (copyrighted), the Ghidra project and binary dumps
 
 ## Building and running
 
-The mod is a **Windows PE DLL** and must be tested under Proton, the real target.
+**This is a development setup, not an install.** There is no packaged release, and none of
+these produce a mod you can hand to someone else. Everything is a Windows PE DLL tested under
+Proton, the real target.
+
+The full experience — RPM, audio takeover, auto-box, and the dashboard — needs the **Frida
+harness plus the overlay DLL together**, because the harness computes the telemetry the
+overlay draws:
+
+```bash
+tools/dev/build.sh             # assemble tools/dev/src/*.js -> memexplore.js
+tools/dev/install-devmod.sh    # Frida gadget + the ASI in overlay-only mode
+```
+
+The C++ DLL on its own (overlay + optional XAudio2 hook, no drivetrain logic):
 
 ```bash
 cd mod && ./install-mod.sh     # build + install into the game's Sources/Bin
 ./uninstall-mod.sh             # clean removal
 ```
 
-Recon harness (Frida gadget via Ultimate ASI Loader, for RE sessions rather than play):
+Recon harness for RE sessions — XAudio2 tracing only, no gameplay changes:
 
 ```bash
 tools/install-recon.sh         # trace only
 tools/uninstall-recon.sh
 ```
+
+All of these only *add* files to the game's `Sources/Bin`, so uninstalling is a clean delete.
 
 Paths are resolved, never hardcoded: the scripts autodetect the usual Steam library locations,
 so normally there's nothing to configure. If your install lives somewhere unusual, either

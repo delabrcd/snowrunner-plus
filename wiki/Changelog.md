@@ -37,6 +37,15 @@ used to live in [[Changelog]]. For durable RE facts see [[Memory Map|Memory-Map]
 - README rewritten for the SnowRunner+ framing (it still claimed "research phase, no code
   yet" and linked `docs/*.md` pages that had moved into the wiki), now leading with the
   drivetrain module **and the dashboard**.
+- **Status framing corrected to match reality.** The first rewrite read like a working mod.
+  It isn't: the drivetrain logic (RPM, audio takeover, auto-box) lives in the **Frida dev
+  harness**, not the shippable DLL — which builds only `dllmain/xhook/mem/overlay/gauges/
+  widgets/assets/bindings`, i.e. the overlay plus an optional XAudio2 hook. The overlay is a
+  *renderer*: it reads the `Local\srdt_telemetry` shm the harness writes, so it draws nothing
+  without it. Plus the RPM denominator is still learned per gear pending the cap↔speed scale.
+  README and [[Home]] now lead with an explicit **early-development** notice, and the
+  build section documents `install-devmod.sh` (harness + overlay) as the real setup rather
+  than implying `install-mod.sh` gives you the feature set.
 
 ## 2026-07-09 — Found the real per-wheel tire angular velocity (RPM numerator)
 
