@@ -88,8 +88,17 @@ These measurements are facts; the *explanation* (and whether the [[Game Model|Ga
 `AngVel`-is-wheel-angvel definition lets us drop the per-truck scale) is a hypothesis on the
 [[Speculation|Speculation]] page. Tracked in [[Open Problems|Open-Problems]].
 
-**Interim (shipping now):** `tools/dev/src/20-rpm.js` learns redline per gear from max-grip
-`wav` — a stopgap so RPM isn't pinned, until the game's own angvel/cap comparison is read.
+**Resolved — and nothing is learned.** The redline for a gear is the game's own upshift
+threshold, read from its gear data rather than inferred: `thrUp = 2*cap[gear] + 5.0`, scaled by
+PowerCoef (`TA+0x38`), decompiled from `hi_GetGearData @ 0xd72640`. This is what the ~2× factor
+was all along — the game tests wheel angvel against `2*cap + k`, so `2*cap` **is** the redline
+angvel, and being per-truck gearbox data it needs no scale correction.
+
+`redlineWavFor()` in `tools/dev/src/20-rpm.js` is the single source of truth, shared with the
+auto-box so it shifts on exactly the RPM the player hears. Taking shift points from game data
+rather than learning them is a **hard requirement**: a learned redline calibrates itself around
+whatever the numerator happens to be, which is how the earlier ~3×-inflated island angvel went
+unnoticed for so long.
 
 ## Why our shift MODES were broken (not the RPM math)
 

@@ -6,6 +6,29 @@ used to live in [[Changelog]]. For durable RE facts see [[Memory Map|Memory-Map]
 [[Audio Pipeline|Audio-Pipeline]]; for guesses see [[Speculation|Speculation]] and
 [[Open Problems|Open-Problems]].
 
+## 2026-07-22 — Docs corrected: RPM redline is read from game data, never learned
+
+- **Correction.** Several pages still said `20-rpm.js` "learns redline per gear from max-grip
+  `wav` as a stopgap" ([[Feature: Gear-aware RPM|Feature-RPM]], [[RPM Derivation|RPM-Derivation]],
+  [[Open Problems|Open-Problems]], and the README). **That is not what the code does and not the
+  design.** `redlineWavFor()` computes `thrUp = 2*cap[gear] + 5.0` scaled by PowerCoef
+  (`TA+0x38`) — the game's own upshift threshold, decompiled from `hi_GetGearData @ 0xd72640` —
+  and is the single source of truth shared with the auto-box. The stale text dated from before
+  the 2026-07-09 switch to the real per-wheel tire angvel, which removed all calibration.
+- **Pulling shift points from the game's gear data is a hard requirement, not an
+  implementation detail.** A learned redline calibrates itself around whatever the numerator
+  is, so it hides numerator bugs — exactly how the ~3×-inflated island angvel (axle/driveshaft
+  bodies) stayed hidden. Recorded here because it kept getting re-proposed.
+- Consequently the ~2× `wav`-vs-`cap` factor is **not** an open problem: the game compares
+  wheel angvel against `2*cap + k`, so `2*cap` *is* the redline. "Per-truck cap↔speed scale"
+  is marked resolved on [[Open Problems|Open-Problems]].
+- Fixed `THIRD-PARTY-NOTICES.md` rendering: the Ferrster `LICENSE` has no trailing newline, so
+  the closing code fence was glued to its last line, swallowing the ImGui and MinHook sections
+  into one code block. Verified against GitHub's markdown renderer (5 headings, 4 code blocks).
+- README: dropped the still image now that the clip embeds inline (a bare
+  `user-attachments` URL renders a real `<video>` player; `<video>` tags are sanitized away,
+  and a repo-raw URL stays a plain link).
+
 ## 2026-07-22 — Published to GitHub; licensed MPL-2.0; machine paths purged
 
 - **Public repo:** <https://github.com/delabrcd/snowrunner-plus> + the wiki pushed to
@@ -42,7 +65,7 @@ used to live in [[Changelog]]. For durable RE facts see [[Memory Map|Memory-Map]
   harness**, not the shippable DLL — which builds only `dllmain/xhook/mem/overlay/gauges/
   widgets/assets/bindings`, i.e. the overlay plus an optional XAudio2 hook. The overlay is a
   *renderer*: it reads the `Local\srdt_telemetry` shm the harness writes, so it draws nothing
-  without it. Plus the RPM denominator is still learned per gear pending the cap↔speed scale.
+  without it.
   README and [[Home]] now lead with an explicit **early-development** notice, and the
   build section documents `install-devmod.sh` (harness + overlay) as the real setup rather
   than implying `install-mod.sh` gives you the feature set.

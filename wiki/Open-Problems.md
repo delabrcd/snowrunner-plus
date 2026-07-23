@@ -3,21 +3,22 @@
 What's still unknown or unverified. Newest/most-important first. When one is closed, move the
 resolution into the relevant page and delete it here.
 
-## 🔴 Per-truck cap↔speed scale (the big one)
+## ✅ RESOLVED — per-truck cap↔speed scale (was "the big one")
 
-**Confirmed facts:** caps are per-truck — truck A `[1.5..10]` ≈ its m/s, a crawler `[0.5..3.5]`
-≈ ⅓ its speed → RPM pins ~114%. Measured: top-cluster `wav` ≈ 2× cap at upshift, `effR ≈ 0.5`.
-Decompiled: `cap = caps[gear]`, `thrUp = 2*cap + k3`, `torque = Torque/sqrt(cap)`. PowerCoef is
-a mode multiplier, not a final drive. First-party docs define `AngVel` as wheel angular
-velocity ([[Game Model|Game-Model]]).
+The redline comes from the **game's own upshift threshold**, not from any scale we derive:
+`thrUp = 2*cap[gear] + 5.0`, scaled by PowerCoef (`TA+0x38`), decompiled from
+`hi_GetGearData @ 0xd72640`. That is per-truck exact by construction, since `caps` are the
+truck's own gearbox data — so there is no scale left to calibrate.
 
-**Not yet confirmed:** how the documented `AngVel` maps to the Havok body angvel we read, the
-cause of the ~2× factor, and whether that yields a radius-free universal RPM. Hypotheses +
-the proposed live/decompile confirmation (hook the angvel↔cap comparison in
-`md_DrivetrainWheelGearSync @ 0xc3fe20`) are on the [[Speculation|Speculation]] page (H1, P1).
+It also explains the measured ~2× factor: the game compares wheel angvel against `2*cap + k`,
+so `2*cap` **is** the redline angvel. It was never an error needing correction.
 
-**Interim:** `tools/dev/src/20-rpm.js` learns redline per gear from max-grip `wav`.
-See [[RPM Derivation|RPM-Derivation]].
+**Nothing is learned.** `redlineWavFor()` in `20-rpm.js` is the single source of truth, shared
+with the auto-box so the box shifts on exactly the RPM the player hears. Pulling shift points
+from game data instead of learning them is a **hard requirement** — a learned redline silently
+calibrates around whatever the numerator happens to be, which is precisely how an inflated
+angvel source (axle/driveshaft bodies, ~3×) stayed hidden until it was replaced by the real
+per-wheel tire angvel. Detail on [[RPM Derivation|RPM-Derivation]] and [[Feature: Gear-aware RPM|Feature-RPM]].
 
 ## 🔴 Commanding low-range `L` — gating feature (diff-lock dependency)
 

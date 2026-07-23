@@ -22,10 +22,16 @@ the thing the stock game never does ([[Game Model|Game-Model]]).
 
 ## Status & open issues
 
-🔨 The signal is smooth and wheelspin-aware (**user-confirmed smooth**), but the **denominator
-scale is not final**:
-- The per-truck cap↔speed scale is unresolved; `20-rpm.js` currently **learns** redline per gear
-  from max-grip `wav` as a stopgap. See [[Open Problems|Open-Problems]].
-- Whether the first-party `AngVel` definition gives a radius-free universal RPM (and the ~2×
-  factor) is unconfirmed — [[Speculation|Speculation]] (H1/P1).
+🔨 The signal is smooth and wheelspin-aware (**user-confirmed smooth**). The denominator comes
+**straight from the game's gear data — nothing is learned or calibrated**:
+- Redline angvel for a gear = the game's own upshift threshold
+  `thrUp = 2*cap[gear] + 5.0`, scaled by PowerCoef (`TA+0x38`, the `L−/L/L+` low range) —
+  decompiled from `hi_GetGearData @ 0xd72640` ([[Ghidra Functions|Ghidra-Functions]]).
+  `redlineWavFor()` in `20-rpm.js` is the **single source of truth**, shared with the auto-box
+  so the box shifts on exactly the RPM the player hears.
+- This also accounts for the measured ~2× `wav`-vs-`cap` factor: the game compares wheel angvel
+  against `2*cap + k`, so `2*cap` **is** the redline — it was never a scale error to correct.
+- Pulling shift points from game data rather than learning them is a **hard requirement**:
+  a learned redline silently calibrates around whatever the numerator happens to be, which is
+  how an earlier inflated angvel source went unnoticed.
 - RPM correctness in low-range `L−/L/L+` untested ([[Feature: Drivetrain controls|Feature-Drivetrain-Controls]]).

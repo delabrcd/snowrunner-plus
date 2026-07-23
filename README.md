@@ -13,10 +13,9 @@
 > - **The C++ DLL currently builds only the overlay** (plus an optional XAudio2 hook) — and
 >   the overlay is a *renderer*: it reads telemetry over shared memory that the Frida harness
 >   writes. Without the harness it draws nothing.
-> - **The core RPM model isn't finished.** The per-truck gear-cap scale is unresolved, so the
->   denominator is currently *learned* per gear as a stopgap and there's an unexplained ~2×
->   factor. RPM is smooth and wheelspin-aware, but not yet correct across all trucks.
->   See [Open-Problems](wiki/Open-Problems.md).
+> - **The drivetrain module is still being tuned.** RPM is smooth and wheelspin-aware and its
+>   shift points come from the game's own gear data, but the audio takeover and auto-box
+>   behaviour are still being worked on. See [Open-Problems](wiki/Open-Problems.md).
 >
 > What genuinely works is documented per feature, with honest status markers, in
 > [Features](wiki/Features.md). Treat everything below as the design intent and the current
@@ -53,8 +52,10 @@ tires fast while the chassis barely moves. That real wheel spin is fully observa
 never reaches the sound or the shift logic. So the mod aims to:
 
 1. **Derive a faithful engine RPM** from the live physics —
-   `wheel_angular_velocity / gear_ratio(gear)`, clamped `[idle, redline]`, wheelspin-aware.
-   *Working in the harness; the per-truck denominator scale is still open.*
+   `wheel_angular_velocity / redline_angvel(gear)`, clamped `[idle, redline]`, wheelspin-aware.
+   The redline is **not guessed or learned** — it's the game's own upshift threshold,
+   `thrUp = 2·cap[gear] + 5.0` scaled by PowerCoef, read from the gearbox data
+   (decompiled `hi_GetGearData`). *Working in the harness.*
 2. **Fix the sound simulation** so pitch, layer crossfade, and shift points follow that RPM
    instead of ground speed — restoring the missing rev-drop on every upshift. *In tuning.*
 3. **Put a real dashboard on screen** — the truck telemetry the stock HUD never shows.
@@ -65,9 +66,6 @@ rebuild the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
 [Audio-Pipeline](wiki/Audio-Pipeline.md).
 
 ## The dashboard
-
-![The SnowRunner+ dashboard: tachometer with redline and shift markers, gear panel, and shifter
-strip, drawn over the running game](docs/media/dashboard.jpg)
 
 https://github.com/user-attachments/assets/1860f322-23a5-481c-8c55-b2d89213b087
 
