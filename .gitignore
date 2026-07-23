@@ -36,3 +36,8 @@ tools/dev/frida.config
 # Runtime telemetry trace written by the Frida script (20-rpm.js); regenerate by driving
 tools/dev/rpm.csv
 
+
+# Runtime telemetry written by the harness each session (90-main.js) — churns constantly
+tools/dev/dash.json
+tools/dev/rpm.txt
+tools/dev/explore.log
