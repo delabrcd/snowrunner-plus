@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Stop the game safely (never pkill -f a string our own shell contains).
 source "$(dirname "$0")/_gamepids.sh"
 steam "steam://stop/1465360" >/dev/null 2>&1 || true

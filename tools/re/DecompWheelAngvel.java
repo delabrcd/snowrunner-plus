@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Decompile the drivetrain functions to find the "current output angvel" the game compares against
 // caps[gear] (the shift threshold) — that value, in cap units, is the true drivetrain angvel we want
 // for RPM. Targets: DrivetrainWheelGearSync @0xc3fe20 (traction loop + shift compare) and

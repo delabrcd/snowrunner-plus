@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """
 analyze_engine_audio.py — extract a truck's engine loop layers from shared_sound.pak,
 decode the MS-ADPCM via ffmpeg, and estimate each layer's fundamental (engine firing)

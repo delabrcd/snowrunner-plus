@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: define the drivetrain struct types (Vehicle / TruckAction / Gearbox) with named
 // fields, so the decompiler shows meaningful members instead of raw +0xNN offsets. Documents our
 // confirmed data model in the project. Saves the DB.

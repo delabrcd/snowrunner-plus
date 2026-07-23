@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Runtime asset service — see assets.h. A self-contained STORED-only ZIP reader plus a
 // minimal Saber .pct -> ID3D11Texture2D loader. No external deps (miniz etc.): the mod
 // links fully static, and every HUD-skin texture we need is STORED (compression 0), so a

@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Hunt the gear-shift sound trigger:
 //  1. xref the "GearFail" / "Gear" sound-tag strings -> the truck <Sounds> parser -> learn
 //     which sound-set field holds the Gear (shift clunk) sound object.

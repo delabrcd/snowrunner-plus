@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Headless: (a) emit raw first-N bytes for AOB building of key funcs; (b) decompile the RHI free fn and
 // the name-lookup fn; (c) follow the GFX prerecord-job data pointer at 0x29d6780 and dump the pointer table.
 import ghidra.app.script.GhidraScript;

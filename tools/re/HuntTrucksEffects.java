@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Hunt the shift-sound trigger inside combine::ASYNC_TRUCKS_EFFECTS_UPDATE.
 // The RTTI type descriptor for that class is at rva 0x2a16e28 (name @0x2a16e38).
 // Strategy: (1) list any symbols mentioning the class, (2) walk RTTI COL->vftable,

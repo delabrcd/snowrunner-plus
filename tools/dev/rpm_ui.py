@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Live engine-mix tuning panel. Sliders write cfg.json (polled by memexplore.js @4Hz);
 bottom shows the live RPM/LOAD readout from rpm.txt. Tune by ear, no reload.
   DISPLAY=:0 python3 tools/dev/rpm_ui.py &

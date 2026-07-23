@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // FUN_6ffffb2cd460 = PlaySoundEventByHash(soundComp, eventHash). Find its callers and the constant
 // hash each passes. Print the call-site disasm (to read the immediate hash in mov edx,IMM) + decompile
 // callers so we can see the gear-change gating. Also do the same for neighbor FUN_6ffffb2cc960.

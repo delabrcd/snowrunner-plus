@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: (1) decompile the action-handler registration fn 0xb5a2b0; (2) dump the
 // handler pointer table in .data (0x2c471000..0x2c478200) resolving each qword to a function;
 // (3) decompile gear-core caller 0xadd5a0; (4) find the axis/handbrake applier: functions that

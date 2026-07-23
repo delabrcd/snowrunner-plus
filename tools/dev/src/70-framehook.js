@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 70-framehook — drive tick() from the game's OWN drivetrain update instead of a timer:
 // Interceptor.attach (observe-only trampoline, auto-reverted on unload) on
 // hi_DrivetrainUpdate_ApplyGear (rva 0xc404f0; Ghidra-labeled: copies commanded gear

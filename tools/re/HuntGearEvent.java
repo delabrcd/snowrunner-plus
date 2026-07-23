@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Trace the drivetrain->event path.
 //  A) callers of ApplyGear(0xc404f0) and DrivetrainWheelGearSync(0xc3fe20): decompile, to see whether
 //     a gear-changed flag/event is posted after the +0x70 write.

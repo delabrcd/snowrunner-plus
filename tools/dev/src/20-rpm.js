@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 20-rpm — the synthesized gear-aware RPM model + per-frame tick.
 let g_rpm = 0.15, g_load = 0, g_pitch = 1.0, g_vol = 1.0, g_cutoff = 1.0, g_gear = 0, g_gameRpm = 0, g_gameLoad = 0;
 let g_speed = 0, g_throttle = 0, g_modelRpm = 0, g_gsig = 0, g_powerCoef = 1.0;   // g_gsig = shift signal; g_powerCoef = L-range mult (TA+0x38)

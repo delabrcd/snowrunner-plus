@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: find the game's single-source DRIVESHAFT / output angular velocity.
 // Anchors (VA; RVA = VA - 0x140000000):
 //   0x142222160  debug HUD "%s %.1f m/s (%.1f km/h)\r\nAngVel %.1f (delta %.3f)"  <- prints the value

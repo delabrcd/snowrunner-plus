@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Extract + analyze the Pacific P16 engine layers from the game to match our synth.
 Finds per-layer engine fundamental (firing freq) and the TURBO whine (a narrowband HF tone
 that rises across idle->low->high), plus the overall spectral shape. Writes spectra PNGs."""

@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Run 2: identify the HUD param_1 object (callers of the HUD draw), find the writer of the
 // AngVel scalar member (offset 0x180, with speed@0x17c and delta@0x184 on the same object),
 // and decompile the gearbox caps accessors that define redlineIndex(gear).

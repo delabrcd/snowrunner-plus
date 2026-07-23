@@ -1,8 +1,18 @@
 // engine_synth.hpp — procedural engine-audio synthesizer (Baldan physically-informed model).
-// C++ port of DasEtwas/enginesound (MIT), which implements Baldan et al. 2015: intake/cylinder/
+//
+// NOT MPL-2.0. Unlike the rest of this project, this file is a derivative work of
+// DasEtwas/enginesound and remains under that project's MIT license:
+//
+//   Copyright (c) 2020 DasEtwas
+//   Licensed under the MIT License. The full copyright and permission notice is
+//   reproduced in THIRD-PARTY-NOTICES.md at the repository root.
+//
+// C++ port of DasEtwas/enginesound, which implements Baldan et al. 2015: intake/cylinder/
 // exhaust modeled as digital-waveguide tubes + a multi-element muffler. Sample-free. Parameterized
 // per engine (cylinders, pipe lengths, muffler, ignition) so different trucks sound different.
-// Same code runs offline (synth_test) and real-time in the mod (fed live RPM/load).
+//
+// STATUS: not used by the shipped mod — this model doesn't sound right for diesels, and it is
+// not part of mod/CMakeLists.txt. Kept as offline research (synth_test) only.
 #pragma once
 #include <vector>
 #include <cmath>

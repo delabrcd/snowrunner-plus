@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless query #3: xref the TRUCK_CONTROL global (rva 0x2A8EDD8) -> the runtime
 // vehicle-update functions -> the wheel loop (Vehicle+0x200). Decompile referencing functions and
 // keep the ones that actually touch wheel offsets (0x200 / 0x60 / angular-velocity math).

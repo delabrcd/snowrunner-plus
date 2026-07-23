@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Open the decrypted+repaired SnowRunner image in r2, rebased to 0 so addresses == RVA
 # (offsets from recon like SnowRunner.exe+0xdfb32f are RVAs -> seek directly to them).
 #   tools/re/r2load.sh            # interactive

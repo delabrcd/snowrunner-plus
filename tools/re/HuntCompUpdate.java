@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Find the truck sound-component per-frame Update: common caller(s) of the continuous-sound fn
 // FUN_6ffffaf02f00(0x892f00) and the anim-event fn FUN_6ffffb2cc960(0xc5c960). Also list callers of
 // PlaySoundEventByHash-inner helper FUN_6ffffaf247a0. Decompile shared parents; flag gear/drivetrain refs.

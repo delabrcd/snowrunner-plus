@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: decompile the STOCK TRANSMISSION cluster to get the exact cap<->physical relation.
 // From hi_DrivetrainUpdate_ApplyGear (0xc404f0): GetGearData(gearbox,gear,...) returns cap-derived
 // params, then they are scaled by a gearbox-level scalar *FUN_0xd71750(gearbox). That scalar is the

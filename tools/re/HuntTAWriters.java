@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: identify the REAL TruckAction control setters by intersecting two facts
 // per function: (a) it READS Vehicle+0x68 (-> TruckAction) somewhere, AND (b) it WRITES a
 // control field on some pointer: byte +0x48/+0x49/+0x4a (handbrake/AWD/diff) or dword +0x74

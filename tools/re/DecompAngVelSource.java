@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Find the live AngVel source. (1) The debug HUD string @0x2222160 ("%s %.1f m/s .. AngVel %.1f
 // (delta %.3f)") -- decompile whoever references it; it reads ground speed + AngVel + delta(slip)
 // from memory. (2) g_fAngVel @0x2287f60 -- list all xrefs (writers = the value's producer) and

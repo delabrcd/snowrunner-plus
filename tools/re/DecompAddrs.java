@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: decompile the functions CONTAINING a list of RVAs. Used to decompile code
 // addresses caught by runtime hardware watchpoints (e.g. the physics integrator that writes
 // chassis/wheel velocity). Edit ADDRS to the RVAs of interest.

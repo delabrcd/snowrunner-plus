@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 90-main — init + interval wiring + telemetry writers (rpm.txt, dash.json). Runs last.
 out('engine takeover loaded @ ' + Date.now());
 loadCfg();

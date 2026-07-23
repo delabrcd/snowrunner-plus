@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Source-filter engine synth MATCHED to a real game recording.
 1. Extract the truck's spectral ENVELOPE (formant shape) from its game engine loops.
 2. Excite with a harmonic impulse train (at the firing freq) + combustion noise = flat-ish source.

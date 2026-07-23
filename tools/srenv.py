@@ -1,3 +1,6 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Shared: resolve the SnowRunner install dir and a scratch dir.
 
 Python counterpart to tools/_env.sh. Install locations are machine-specific and must never

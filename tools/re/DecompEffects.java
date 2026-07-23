@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Decompile the 3 vtable methods of combine::ASYNC_TRUCKS_EFFECTS_UPDATE (vtable @ rva 0x21d10b8):
 //   [0]0x8454d0  [1]0x845400  [2]0x9144d0
 // For each, scan the decompiled body for calls; report callees and whether the body/callees touch

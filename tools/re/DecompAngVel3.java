@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Run 3: pinpoint the writer of the AngVel telemetry member. Require STORE to 0x17c AND 0x180
 // AND 0x184 on the same function, plus a [reg+0x20] deref (Vehicle back-ptr). Decompile hits +
 // the near-HUD candidate FUN @0xa5f950.

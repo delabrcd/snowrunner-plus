@@ -32,6 +32,38 @@ Also: [tickelton frida-snowrunner-trainer](https://github.com/tickelton/misc.re)
 - **Noclip has NO license file** = all-rights-reserved by default (publishing on GitHub grants only view/fork *within* GitHub, not redistribution; intent to open-source is not a license). **Decision (2026-07-04): cleared to use Noclip's `mappings.md` offsets** — those are discovered *facts* about the binary (memory layout, Havok field positions), not copyrightable expression, so reproducing them is safe regardless of license. **We do NOT copy its Lua/`src` code** into the distributed build (SMT-MIT covers the anchor/injection code; the RPM logic is ours), so the license never bites. If code reuse is ever wanted, open an issue asking the author for an MIT `LICENSE` first.
 - Correction to an earlier note: SMT's last push is **2026-02-01** (not 2026-07-03) — ~5 months old, still recent and MIT.
 
+### Project license: MPL-2.0 (decided 2026-07-22)
+
+SnowRunner+ is **Mozilla Public License 2.0** — file-level copyleft, so improvements to the
+framework's own files stay open while third-party modules built on it may carry any license.
+This is compatible with every upstream below (all permissive) and with the goal of hosting
+other people's mods.
+
+- Full text: `LICENSE`. Per-file MPL Exhibit A headers on all first-party sources.
+- Attribution: `THIRD-PARTY-NOTICES.md` reproduces each upstream notice verbatim, as MIT and
+  BSD-2-Clause require. A credit in a source comment does **not** satisfy MIT on its own —
+  the copyright *and* permission notice must ship with the distribution.
+
+### Upstreams we actually incorporate (attribution required)
+
+| Upstream | License | Where it lands |
+|---|---|---|
+| drafty46/SMT | MIT © 2025 drafty46 | `TRUCK_CONTROL` AOB anchor in `mod/src/mem.cpp` |
+| Ferrster/Snowrunner-Manual-Gearbox-Mod | MIT © 2015 Lopanov Vladislav Alekseevich | vehicle struct layout |
+| **DasEtwas/enginesound** | **MIT © 2020 DasEtwas** | `mod/synth/engine_synth.hpp` is a **C++ port**; `tools/synth/parse_esc.py` reads its `.esc` format; `tools/synth/presets/*.epreset` are converted from its presets |
+| Dear ImGui | MIT © 2014-2025 Omar Cornut | `mod/vendor/imgui/` (overlay) |
+| MinHook | BSD-2-Clause © 2009-2017 Tsuda Kageyu | `mod/vendor/minhook/` (hooking) |
+
+> **enginesound was missed by the original review** (2026-07-22). The review above covered only
+> SMT / Ferrster / Noclip, but `engine_synth.hpp` is a direct port of enginesound and the
+> committed `.epreset` files are derived from its presets — both MIT works needing attribution.
+> Now recorded and attributed. That file stays under **MIT**, not MPL, since it is a derivative.
+>
+> **The ported synth is not used.** The Baldan waveguide model doesn't sound right for diesels
+> and is not in `mod/CMakeLists.txt` — it remains offline research (`mod/synth/synth_test`).
+> The obligation still stands while the source is published; it would only lapse if the ported
+> files were removed from the repo.
+
 ## Reusable intel
 
 > The struct offsets / AOBs below are ported RE facts; the authoritative live-verified copy belongs on [[Memory-Map]] / [[Ghidra-Functions]]. Reproduced here as the prior-art provenance record.

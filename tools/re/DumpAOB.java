@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Print the first N instructions of key functions with raw bytes, so we can build stable AOB sigs.
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;

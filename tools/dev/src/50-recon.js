@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 50-recon — dev-only probes: HW watchpoints, memory scans, module dump. Not part of the mod behavior.
 // ---- HW watchpoint capability spike: can we catch the instruction that writes a physics value?
 // If yes, we can pinpoint the wheel-angvel writer in one frame. Test on chassis linVel (written

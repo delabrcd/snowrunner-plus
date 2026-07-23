@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Read-only drivetrain telemetry + memory explorer.
 // - Resolves the TRUCK_CONTROL singleton via the SMT AOB anchor (attribution: drafty46/SMT,
 //   Ferrster — MIT). No game-code hooks (those crashed before); pure reads.

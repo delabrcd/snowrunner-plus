@@ -1,8 +1,9 @@
 # SnowRunner+
 
 A modular modding **framework** for the Havok / Saber "Husky" engine family, plus the first
-module built on it: a **drivetrain / RPM / engine-audio mod** that gives SnowRunner a real,
-gear-aware engine RPM — driving the sound, the tachometer, and the shift logic.
+module built on it: a **drivetrain mod** that gives SnowRunner a real, gear-aware engine RPM —
+driving the sound and the shift logic — and an **in-game dashboard** showing the truck
+telemetry the stock HUD leaves out.
 
 The framework exists so mod authors don't each have to re-derive injection, offsets, overlay
 rendering, and input plumbing. It ships as a single Windows DLL: framework services plus
@@ -36,10 +37,29 @@ never reaches the sound or the shift logic. So the mod:
    `wheel_angular_velocity / gear_ratio(gear)`, clamped `[idle, redline]`, wheelspin-aware.
 2. **Fixes the sound simulation** so pitch, layer crossfade, and shift points follow that RPM
    instead of ground speed — restoring the missing rev-drop on every upshift.
+3. **Puts a real dashboard on screen** — the truck telemetry the stock HUD never shows.
 
 We **synthesize** a correct RPM from state the running game already has. We do **not** rebuild
 the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
 [Audio-Pipeline](wiki/Audio-Pipeline.md).
+
+## The dashboard
+
+The most mature part of the mod, and useful on its own: an in-game overlay (Steam-overlay
+style, ImGui over `IDXGISwapChain::Present`) showing drivetrain state the game keeps hidden.
+
+- **Tachometer** reading the real gear-aware RPM, with a redline zone the needle pushes past
+  and up/down shift-point markers when the gearbox is ours.
+- **Gear panel** — big current gear plus AUTO/MANUAL/CLUTCH mode, and an option to occlude the
+  game's own gear widget (which is wrong in manual).
+- **Shifter strip** `[L] R N 1..gearMax [H]` with slide and glow animation.
+- **Speed, throttle and load bars**, plus **8 assignable gauges** (km/h, RPM, load, torque…,
+  as arc or bar) you lay out yourself.
+- Drag/resize while the config panel is open, locked while driving, layout persisted. **F9**
+  toggles the overlay, **F8** opens config.
+
+See [Feature-Overlay](wiki/Feature-Overlay.md). It generalizes into the framework's **overlay
+host**, so other modules can draw their own panels rather than each re-deriving a D3D hook.
 
 Feasibility is settled: standard x64 PE, **no Denuvo / VMProtect / kernel anti-cheat**
 (SteamStub license wrapper only), imports `XAudio2_9Redist.dll` by name (a clean proxy-DLL
@@ -109,6 +129,19 @@ GE-Proton10-34.
 
 Toolchain setup — Ghidra project, Frida under Proton, the driving harness — is documented in
 [RE-Toolchain](wiki/RE-Toolchain.md).
+
+## License
+
+**[Mozilla Public License 2.0](LICENSE).** File-level copyleft: changes to SnowRunner+'s own
+files stay open, but a module built on the framework can carry whatever license its author
+wants — including a proprietary one. The intent is to keep the framework itself improvable by
+everyone without dictating terms to the mods that sit on top of it.
+
+Third-party code is bundled or ported under its own terms — SMT and Ferrster (MIT, the vehicle
+anchor and struct layout), Dear ImGui (MIT), MinHook (BSD-2-Clause), and enginesound (MIT, the
+offline synth experiment). Full notices in
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); `mod/synth/engine_synth.hpp` stays under its
+upstream MIT license rather than the MPL.
 
 ## Legal
 

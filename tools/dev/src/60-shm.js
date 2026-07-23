@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 60-shm — shared-memory telemetry OUT (named mapping Local\srdt_telemetry): lock-free
 // same-process feed to the overlay ASI at ~30Hz — no filesystem, no JSON. Byte layout is
 // ABI, mirrored from mod/src/telemetry.h v2 (magic+0, layout+4, seq+8 seqlock, payload+12,

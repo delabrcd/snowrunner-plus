@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: trace the input-handler layer. Decompile the per-action handlers that call
 // the confirmed setters, show ALL references to each (detect a function-pointer/action table),
 // walk up to the dispatcher, enumerate refs to g_TruckControl (0x2A8EDD8), and find the public

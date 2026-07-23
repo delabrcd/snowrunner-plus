@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: decompile the confirmed/candidate drivetrain-input functions and list the
 // CALLERS of the confirmed setters (SwitchAWD/SwitchDiff/DisableAuto) = the input dispatch layer.
 import ghidra.app.script.GhidraScript;

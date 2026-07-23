@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Headless: discover the asset/texture/GFx surface.
 // 1) list SYMBOLS whose (demangled) name matches keyword groups, with RVA.
 // 2) for a set of marker STRINGS, find the defined-data address and its xrefs -> containing function.

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Combined dev install: Frida gadget (memexplore.js — audio takeover, RPM, auto-box,
 # dash.json telemetry) PLUS the C++ ASI in OVERLAY-ONLY mode (xaudio/telemetry off via ini,
 # since the Frida script owns those hooks — double-patching the same prologues would crash).

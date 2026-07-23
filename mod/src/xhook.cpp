@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // XAudio2 hook chain: XAudio2Create -> IXAudio2::CreateSourceVoice (vtbl[5]) ->
 // IXAudio2SourceVoice::SetFrequencyRatio (vtbl[26], shared function, hooked once).
 // Phase 2: identity pass-through + sampled logging. Later phases override the ratio from

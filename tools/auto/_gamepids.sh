@@ -1,3 +1,6 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Shared helper: list the REAL SnowRunner game PIDs, never matching our own tool shells.
 # `pkill -f SnowRunner.exe` is unsafe — it matches any process whose cmdline contains that
 # string, including the very shell running our commands. Enumerate + filter instead.

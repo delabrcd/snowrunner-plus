@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // 55-diag — EMPIRICAL drivetrain probe (temporary). Logs the RAW gearbox caps vector, the
 // full island angular-velocity distribution, ground speed, and candidate direct output-angvel
 // fields, so we can DERIVE the true RPM formula from ground truth instead of guessing offsets.

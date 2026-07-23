@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless query #2: find the WHEEL/PHYSICS code (not audio). Anchors on strings we know
 // exist — g_fAngVel (wheel angular velocity shader uniform), AngVel, wheel/traction/slip/soft —
 // lists the functions that reference them, and decompiles the strongest wheel-angvel candidates.

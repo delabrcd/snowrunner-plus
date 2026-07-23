@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: apply everything we know as PERSISTENT labels so it compounds across passes.
 // Convention: function name = "<conf>_<Name>", conf in {hi, md, lo} (confidence). A plate comment
 // carries the evidence. Re-run any time we learn more; edit the LABELS list. Saves the DB.

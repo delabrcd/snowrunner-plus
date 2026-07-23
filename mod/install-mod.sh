@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Install the engine mod into SnowRunner's Bin/: Ultimate ASI Loader (dinput8.dll) +
 # snowrunner-engine.asi. Only ADDS files -> uninstall is a clean delete.
 # Also writes snowrunner-engine.ini (DEV override: points the mod's log + dash.json at this

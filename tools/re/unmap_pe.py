@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Turn a linear memory dump of a mapped PE (file offset == RVA) into a file whose PE section
 headers match, so radare2 / r2ghidra / Ghidra load it correctly (imports, xrefs, analysis).
 

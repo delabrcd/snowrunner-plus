@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Launch SnowRunner through the running Steam client. Uses the self-safe game-pid helper.
 source "$(dirname "$0")/_gamepids.sh"
 pgrep -x steam >/dev/null || { echo "ERROR: Steam client not running"; exit 1; }

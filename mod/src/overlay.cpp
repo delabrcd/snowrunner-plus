@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // In-game overlay (Steam/Discord-overlay style): MinHook on IDXGISwapChain::Present +
 // Dear ImGui rendered inside the game's frame. Works identically under DXVK/Proton and
 // native Windows because it lives in-process, downstream of the game's own D3D11 calls.

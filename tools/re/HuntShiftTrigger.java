@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Pin the shift-sound trigger.
 //  A) All callers of StartSoundObject (rva 0xdfe630). For each, decompile, flag references to gear
 //     fields (0x70/0x74) and to 'rand'. Print full decompile ONLY for callers that reference gear.

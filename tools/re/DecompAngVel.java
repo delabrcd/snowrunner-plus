@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: locate the live output/driveshaft angular-velocity scalar (g_fAngVel).
 // Strongest lead = debug-HUD format string @ VA 0x142222160 ("AngVel %.1f (delta %.3f)").
 // Also chases g_fAngVel string @ 0x142287f60, its name block @ 0x142246e80, and decompiles the

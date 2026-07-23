@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 """Parse enginesound .esc (RON) presets -> a flat .epreset the C++ synth loads.
 Lets us render the author's HAND-TUNED engines through our port (validates the port +
 gives good-sounding presets to map SnowRunner trucks onto)."""

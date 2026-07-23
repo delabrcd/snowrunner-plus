@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Decompile a curated set of RVAs (the effects-update range fn + big emitter fn) and, for the range
 // fn, list its callees so we can see the per-truck effects/sound path. RVA = FUN_VA - 0xa670000.
 import ghidra.app.script.GhidraScript;

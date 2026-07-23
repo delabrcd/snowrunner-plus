@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless post-script: decompile the XAudio2 SetFrequencyRatio wrapper (RVA 0xdfb2f0)
 // and the functions that CALL it (where the engine pitch ratio is actually computed), plus a
 // couple of neighbors. Prints pseudo-C so we can read the real engine-speed source.

@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // For every caller of StartSoundObject(0xdfe630), scan the decompiled C for an EDGE pattern:
 // a StartSoundObject call whose preceding ~8 lines contain an inequality compare of an int field
 // (candidate: gear != prevGear). Rank + print full body of matches. Also print signature+size of all.

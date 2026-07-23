@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Ghidra headless: find the DRIVESHAFT runtime structure & its angular velocity.
 // The truck XML defines drivetrain as <Shafts> topology; there is a runtime shaft object whose
 // rotation follows the engine/wheels (spins during wheelspin) and animates the visual propshaft.

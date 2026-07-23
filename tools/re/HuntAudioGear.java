@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Approach from the audio side + the effects dispatcher.
 //  A) xrefs to UpdateSound(0xdff1e0) and SetVoiceVolPitch(0xdfb2f0): decompile callers, flag gear/oneshot.
 //  B) decompile FUN_6ffffbc0c870 (effects parallel dispatch called by ASYNC_TRUCKS_EFFECTS_UPDATE::run).

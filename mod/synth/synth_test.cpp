@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // synth_test.cpp — offline: generate WAVs from the engine synth for a few truck presets,
 // so we can iterate on the SOUND by ear before wiring it into the game.
 //   build: g++ -O2 -std=c++17 synth_test.cpp -o synth_test && ./synth_test

@@ -6,6 +6,34 @@ used to live in [[Changelog]]. For durable RE facts see [[Memory Map|Memory-Map]
 [[Audio Pipeline|Audio-Pipeline]]; for guesses see [[Speculation|Speculation]] and
 [[Open Problems|Open-Problems]].
 
+## 2026-07-22 — Published to GitHub; licensed MPL-2.0; machine paths purged
+
+- **Public repo:** <https://github.com/delabrcd/snowrunner-plus> + the wiki pushed to
+  `snowrunner-plus.wiki.git` (29 pages; `wiki/README.md` stays repo-only). `wiki/` in the repo
+  remains the source of truth — the GitHub wiki is a mirror, re-synced by copy.
+- **License: MPL-2.0** (`LICENSE`, per-file Exhibit A headers on all first-party sources).
+  File-level copyleft keeps framework files open while leaving third-party modules free to
+  choose their own terms. Rationale + upstream table on [[Prior Art|Prior-Art]].
+- **`THIRD-PARTY-NOTICES.md`** added, reproducing every upstream notice verbatim. **The
+  original licensing review had missed `DasEtwas/enginesound` (MIT)** — `mod/synth/
+  engine_synth.hpp` is a C++ port of it and `tools/synth/presets/*.epreset` are converted from
+  its presets. That file stays MIT (not MPL); the ported synth is **not shipped** (the Baldan
+  waveguide model doesn't sound right for diesels; absent from `mod/CMakeLists.txt`).
+- **No machine-specific paths are committed any more.** Hardcoded install paths in 17 files
+  (plus scratchpad paths carrying the username) are replaced by a single resolution point:
+  `tools/_env.sh` (shell) + `tools/srenv.py` (python) → `$SR_GAME` → gitignored `.env.local`
+  → autodetect of the usual Steam library locations. Template: `.env.local.example`.
+  An explicitly-set-but-missing `SR_GAME` now fails loudly in both, instead of python
+  silently autodetecting past a typo.
+- **Stale `snowrunner-drivetrain` paths fixed** after the directory rename, by *deriving*
+  paths rather than re-hardcoding: `health.sh` derives the repo root; `install-recon.sh`
+  computes the Wine staging path and substitutes `@@STAGE@@` into `combined.js` + generates
+  `frida.config` (the `@@DEV@@` idiom from `tools/dev/build.sh`); the `ghidra-re` skill uses
+  `git rev-parse --show-toplevel`.
+- README rewritten for the SnowRunner+ framing (it still claimed "research phase, no code
+  yet" and linked `docs/*.md` pages that had moved into the wiki), now leading with the
+  drivetrain module **and the dashboard**.
+
 ## 2026-07-09 — Found the real per-wheel tire angular velocity (RPM numerator)
 
 - **RE:** decompiled the drivetrain traction loop and found the game's own per-wheel tire angvel.

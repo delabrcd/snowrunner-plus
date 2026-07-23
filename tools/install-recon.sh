@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Install the XAudio2 recon (+ optional autodrive) harness into SnowRunner's Bin/.
 # Injection: Ultimate ASI Loader (dinput8.dll) -> loads frida.asi (Frida gadget)
 #            -> runs the combined script (tracer [+ autodrive]) at game start.

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # Dev mode: ASI loader + Frida gadget -> memexplore.js (hot-reload). Removes the C++ mod so
 # only the explorer runs. memexplore.js is GENERATED: edit src/*.js and run ./build.sh
 # (or ./build.sh --watch) — the gadget reloads the rebuilt file live in the game (~1s).

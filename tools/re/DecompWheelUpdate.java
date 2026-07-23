@@ -1,3 +1,6 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Per-wheel physics/state update helpers from the drivetrain sync loop. Goal: find who WRITES
 // wheel+0x16c (and what it derives from -- a Havok body angVel read = true wheel speed; a constant =
 // a flag) and any read of a rigid-body angVel (+0x240) or motion angVel (+0xf0). RVAs (imagebase
