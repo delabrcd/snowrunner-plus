@@ -66,6 +66,13 @@ rebuild the physics. Details: [RPM-Derivation](wiki/RPM-Derivation.md),
 
 ## The dashboard
 
+![The SnowRunner+ dashboard: tachometer with redline and shift markers, gear panel, and shifter
+strip, drawn over the running game](docs/media/dashboard.jpg)
+
+▶ **[Watch it in motion (15s, MP4)](docs/media/dashboard.mp4)** — the needle tracking real RPM
+and dropping on each upshift as the box runs up through the gears. (GitHub can't play video
+inline in a README, so this is a click-through.)
+
 The most complete part of the project: an in-game overlay (Steam-overlay style, ImGui over
 `IDXGISwapChain::Present`) showing drivetrain state the game keeps hidden. Live-verified under
 DXVK/Proton.

@@ -1,2 +1,2 @@
 RPM 0%  LOAD 0%  gear 1
-pitch 0.80  vol 0.60  cutoff 0.35  mode takeover  voices 8
+pitch 0.80  vol 0.60  cutoff 0.35  mode takeover  voices 16
