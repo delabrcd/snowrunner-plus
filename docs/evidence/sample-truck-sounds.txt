@@ -1,0 +1,35 @@
+// source: initial.pak :: [media]\classes\trucks\ank_mk38.xml
+// The engine-audio layer stack + tach gauge that drives everything.
+
+		EngineStartDelay="0.8"
+		<SoundsWheels _template="Default" />
+		<SoundsDamage _template="Heavy" />
+		<Sounds
+			<Honk			Sound="trucks/ank_mk38/ank_mk38_honk" />
+			<BrakePull		Sound="trucks/ank_mk38/ank_mk38_brake_pull" />
+			<BrakeRelease	Sound="trucks/ank_mk38/ank_mk38_brake_release" />
+			<BrakesSqueal	Sound="trucks/ank_mk38/ank_mk38_brakes_squeal" />
+			<Reverse		Sound="trucks/ank_mk38/ank_mk38_reverse" />
+			<EngineAccel	Sound="trucks/ank_mk38/ank_mk38_acc" />
+			<EngineRev		Sound="trucks/ank_mk38/ank_mk38_rev" />
+			<EngineStart	Sound="trucks/ank_mk38/ank_mk38_start" />
+			<EngineStop		Sound="trucks/ank_mk38/ank_mk38_stop" />
+			<EngineIdle		Sound="trucks/ank_mk38/ank_mk38_idle" />
+			<EngineIdle_2d	Sound="trucks/ank_mk38/ank_mk38_idle_2d"	IsSound2D="true" />
+			<EngineLow		Sound="trucks/ank_mk38/ank_mk38_low" />
+			<EngineLow_2d	Sound="trucks/ank_mk38/ank_mk38_low_2d"	IsSound2D="true" />
+			<EngineHigh		Sound="trucks/ank_mk38/ank_mk38_high" />
+			<EngineHigh_2d	Sound="trucks/ank_mk38/ank_mk38_high_2d"	IsSound2D="true" />
+			<EngineHeavy	Sound="" />
+			<EngineHeavy_2d	Sound=""	IsSound2D="true" />
+			<EngineTurbo	Sound="" />
+		<EngineSocket Default="us_truck_old_heavy_engine_0" Type="e_us_truck_old_heavy" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="rpm" Mesh="trucks/arrows/ank_mk38_arrow_01" Org="(1.731; 2.072; 0.249)" OutputAngles="(-152; 152)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;160)" InputType="speed" Mesh="trucks/arrows/ank_mk38_arrow_01" Org="(1.721; 2.072; 0.109)" OutputAngles="(-122; 122)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_04" Org="(1.715; 2.053; -0.002)" OutputAngles="(-29; -20)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.066)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_03" Org="(1.709; 2.073; -0.084)" OutputAngles="(-132; -50)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.066)" InputRange="(0;1)" InputType="fuel" Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.73; 1.944; 0.224)" OutputAngles="(-33; 33)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.724; 1.944; 0.135)" OutputAngles="(-32; 5)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.714; 1.944; -0.002)" OutputAngles="(-28; -20)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_03" Org="(1.709; 1.963; -0.084)" OutputAngles="(-132; -35)" />
+			<Gauge Damping="0.99" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" InputType="engineEnabled" Mesh="trucks/arrows/ank_mk38_arrow_04" Org="(1.703; 1.943; -0.167)" OutputAngles="(-29; -3)" />

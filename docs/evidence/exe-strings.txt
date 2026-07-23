@@ -1,0 +1,48 @@
+# Curated strings from SnowRunner.exe (RE-relevant)
+# captured 2026-07-04T16:04Z from: <SnowRunner install>/Sources/Bin/SnowRunner.exe
+
+## Proxy target (import by name):
+XAudio2_9Redist.dll
+XAudio2Create failed: %X
+
+## Audio pitch / param registry:
+isFixedPitch
+IsFixedPitch
+pitch
+Sounds/DisableReversePitch
+Sounds/EngineHeavyVolume
+
+## Internal RPM signal (tach + hardware LEDs):
+0B	crPM
+gui/rpm__d_a.tga
+logiWheelGetRpmLedCaps
+logiWheelSetRpmLeds
+rPM){yc
+VRPMK
+YRPm|
+
+## Drivetrain state globals:
+AngVel
+- dsWriteBool(dsBIT_STREAM_LABEL(dsHASHED_STRING_BUILDER_CT { dsINTEGRAL_CONSTANT<DWORD, dsSTRING_HASHER_CT::Calc("lights_ignition")>::VALUE } ),stream, pTruck ? pTruck->IsEngineEnabled(true) : false), file: "C:\_\_task_dir\MudRunner2\Sources\SpinTires\Husky\Network\net_replication_truck.cpp", line: 940
+engineEnabled
+g_fAngVel
+g_wheelParams g_softParams g_fAngVel g_fOcclusionBaseY g_fMeshScale g_tmRotation
+HighGear/AngVel
+HighGear/FuelModifier
+MaxDeltaAngVel
+ReverseGear/AngVel
+ReverseGear/FuelModifier
+
+## Engine identity (Husky / MudRunner2 asserts):
+SpinTires MudRunnerH2
+- dsWriteValue(dsBIT_STREAM_LABEL(dsHASHED_STRING_BUILDER_CT { dsINTEGRAL_CONSTANT<DWORD, dsSTRING_HASHER_CT::Calc("farmingFieldsDataSize")>::VALUE } ),stream, value.subzones.Length()), file: "C:\_\_task_dir\MudRunner2\Sources\SpinTiresLib\SpinTiresLib.h", line: 1951
+- dsWriteData(dsBIT_STREAM_LABEL(dsHASHED_STRING_BUILDER_CT { dsINTEGRAL_CONSTANT<DWORD, dsSTRING_HASHER_CT::Calc("farmingFieldsData")>::VALUE } ),stream, value.subzones.Begin() , AP_BYTE_BITS * value.subzones.Length()), file: "C:\_\_task_dir\MudRunner2\Sources\SpinTiresLib\SpinTiresLib.h", line: 1952
+- dsReadValue(dsBIT_STREAM_LABEL(dsHASHED_STRING_BUILDER_CT { dsINTEGRAL_CONSTANT<DWORD, dsSTRING_HASHER_CT::Calc("farmingFieldsDataSize")>::VALUE } ),stream, len), file: "C:\_\_task_dir\MudRunner2\Sources\SpinTiresLib\SpinTiresLib.h", line: 1960
+- dsReadData(dsBIT_STREAM_LABEL(dsHASHED_STRING_BUILDER_CT { dsINTEGRAL_CONSTANT<DWORD, dsSTRING_HASHER_CT::Calc("farmingFieldsData")>::VALUE } ),stream, value.subzones.Begin(), AP_BYTE_BITS * len), file: "C:\_\_task_dir\MudRunner2\Sources\SpinTiresLib\SpinTiresLib.h", line: 1962
+C:\_\_task_dir\MudRunner2\Sources\SpinTires\auto__MR2_SpinTires_init_components.cpp
+C:\_\_task_dir\MudRunner2\Sources\SpinTires\auto__MR2_SpinTires_init_components.cpp
+C:\_\_task_dir\MudRunner2\Sources\SpinTires\auto__MR2_SpinTires_init_components.cpp
+
+## Anti-tamper scan (should be Steam-only, no Denuvo/EAC):
+SteamAPI_RestartAppIfNecessary
+SteamAPI_RestartAppIfNecessary true! Exit process...

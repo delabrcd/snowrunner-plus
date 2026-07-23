@@ -1,0 +1,3 @@
+proton: GE-Proton10-34
+install: <steam-library>/steamapps/common/SnowRunner   # machine-specific; set $SR_GAME
+appid: 1465360

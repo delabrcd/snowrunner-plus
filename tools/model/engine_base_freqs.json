@@ -1,0 +1,546 @@
+{
+ "aac_58dw": {
+  "high": 69.8,
+  "idle": 62.8,
+  "low": 44.2
+ },
+ "ank_mk38": {
+  "high": 110.1,
+  "idle": 38.0,
+  "low": 75.0
+ },
+ "ankatra_1160": {
+  "high": 77.5,
+  "idle": 61.7,
+  "low": 47.0
+ },
+ "aramatsu_forester": {
+  "high": 51.8,
+  "idle": 77.2,
+  "low": 57.7
+ },
+ "azov_4220_antarctic": {
+  "high": 49.8,
+  "idle": 38.8,
+  "low": 104.1
+ },
+ "azov_43_191_sprinter": {
+  "high": 66.8,
+  "idle": 102.2,
+  "low": 42.8
+ },
+ "azov_5319": {
+  "high": 45.5,
+  "idle": 39.0,
+  "low": 47.2
+ },
+ "azov_64131": {
+  "high": 44.3,
+  "idle": 38.8,
+  "low": 110.5
+ },
+ "azov_670963n": {
+  "high": 35.5,
+  "idle": 42.8,
+  "low": 35.3
+ },
+ "azov_73210": {
+  "high": 49.8,
+  "idle": 39.0,
+  "low": 61.9
+ },
+ "boar_45318": {
+  "high": 50.2,
+  "idle": 67.0,
+  "low": 89.8
+ },
+ "burlak_6x6": {
+  "high": 40.2,
+  "idle": 40.0,
+  "low": 40.8
+ },
+ "cat745c": {
+  "high": 43.8,
+  "idle": 61.2,
+  "low": 37.0
+ },
+ "cat_770g": {
+  "high": 65.0,
+  "idle": 60.1,
+  "low": 49.0
+ },
+ "cat_ct680": {
+  "high": 145.9,
+  "idle": 50.8,
+  "low": 37.4
+ },
+ "cat_ct681": {
+  "high": 135.1,
+  "idle": 47.0,
+  "low": 104.0
+ },
+ "cat_th357": {
+  "high": 50.0,
+  "idle": 100.0,
+  "low": 52.4
+ },
+ "chevrolet_ck1500": {
+  "high": 55.8,
+  "idle": 45.0,
+  "low": 59.3
+ },
+ "chevrolet_kodiakc70": {
+  "high": 51.1,
+  "idle": 41.0,
+  "low": 39.0
+ },
+ "chevy_apache": {
+  "high": 40.7,
+  "idle": 35.8,
+  "low": 63.2
+ },
+ "dan_96320": {
+  "high": 35.5,
+  "idle": 36.0,
+  "low": 58.5
+ },
+ "derry_longhorn_3194": {
+  "high": 39.8,
+  "idle": 38.8,
+  "low": 36.5
+ },
+ "derry_longhorn_4520": {
+  "high": 106.8,
+  "idle": 42.4,
+  "low": 84.4
+ },
+ "derry_special_15c177": {
+  "high": 65.5,
+  "idle": 44.7,
+  "low": 94.8
+ },
+ "don_71": {
+  "high": 87.0,
+  "idle": 43.0,
+  "low": 40.8
+ },
+ "earthroamer_lti": {
+  "high": 40.2,
+  "idle": 57.0,
+  "low": 40.8
+ },
+ "earthroamer_sx": {
+  "high": 40.2,
+  "idle": 40.2,
+  "low": 40.8
+ },
+ "femm_37at": {
+  "high": 40.9,
+  "idle": 60.2,
+  "low": 36.2
+ },
+ "ford_clt9000": {
+  "high": 115.2,
+  "idle": 39.4,
+  "low": 47.0
+ },
+ "ford_f750": {
+  "high": 40.0,
+  "idle": 49.6,
+  "low": 38.0
+ },
+ "freightliner_114sd": {
+  "high": 112.5,
+  "idle": 41.3,
+  "low": 132.8
+ },
+ "freightliner_fld120": {
+  "high": 158.8,
+  "idle": 112.1,
+  "low": 44.3
+ },
+ "freightliner_m916a1": {
+  "high": 121.8,
+  "idle": 44.5,
+  "low": 41.5
+ },
+ "futom_7290ra": {
+  "high": 69.5,
+  "idle": 60.1,
+  "low": 66.5
+ },
+ "gmc_8000": {
+  "high": 49.7,
+  "idle": 48.3,
+  "low": 60.1
+ },
+ "gmc_9500": {
+  "high": 51.9,
+  "idle": 52.2,
+  "low": 53.3
+ },
+ "gorby4": {
+  "high": 54.8,
+  "idle": 36.8,
+  "low": 58.0
+ },
+ "hib_billert_1980": {
+  "high": 85.2,
+  "idle": 63.9,
+  "low": 100.0
+ },
+ "hib_billert_m816": {
+  "high": 41.0,
+  "idle": 53.0,
+  "low": 59.2
+ },
+ "hummer_h2": {
+  "high": 52.5,
+  "idle": 37.2,
+  "low": 35.8
+ },
+ "int_fleetstar_f2070a": {
+  "high": 55.8,
+  "idle": 54.0,
+  "low": 78.2
+ },
+ "int_hx520": {
+  "high": 47.5,
+  "idle": 97.7,
+  "low": 38.7
+ },
+ "int_loadstar_1700": {
+  "high": 72.0,
+  "idle": 54.8,
+  "low": 39.2
+ },
+ "int_paystar_5070": {
+  "high": 55.0,
+  "idle": 81.8,
+  "low": 62.2
+ },
+ "int_scout_800": {
+  "high": 68.8,
+  "idle": 38.0,
+  "low": 111.5
+ },
+ "int_transtar_4070a": {
+  "high": 47.8,
+  "idle": 44.4,
+  "low": 79.2
+ },
+ "jeep_cj7": {
+  "high": 37.0,
+  "idle": 37.8,
+  "low": 36.8
+ },
+ "jeep_wrangler": {
+  "high": 60.8,
+  "idle": 47.0,
+  "low": 82.5
+ },
+ "kenworth_963": {
+  "high": 40.8,
+  "idle": 52.5,
+  "low": 84.2
+ },
+ "kenworth_990": {
+  "high": 71.5,
+  "idle": 35.8,
+  "low": 59.2
+ },
+ "kenworth_c500": {
+  "high": 35.2,
+  "idle": 35.0,
+  "low": 35.4
+ },
+ "kenworth_t880": {
+  "high": 80.0,
+  "idle": 90.3,
+  "low": 86.3
+ },
+ "khan_317_sentinel": {
+  "high": 53.3,
+  "idle": 41.8,
+  "low": 44.2
+ },
+ "khan_39_marshall": {
+  "high": 39.2,
+  "idle": 52.4,
+  "low": 63.5
+ },
+ "khan_lo4f": {
+  "high": 42.8,
+  "idle": 51.6,
+  "low": 50.5
+ },
+ "kirovets_k700": {
+  "high": 48.8,
+  "idle": 51.5,
+  "low": 65.0
+ },
+ "kirovets_k7m": {
+  "high": 49.8,
+  "idle": 39.2,
+  "low": 69.5
+ },
+ "kolob_74760": {
+  "high": 47.8,
+  "idle": 58.2,
+  "low": 58.2
+ },
+ "kolob_74941": {
+  "high": 71.2,
+  "idle": 38.8,
+  "low": 44.8
+ },
+ "krs_58_bandit": {
+  "high": 53.7,
+  "idle": 57.0,
+  "low": 44.0
+ },
+ "land_rover_defender_110": {
+  "high": 144.3,
+  "idle": 53.5,
+  "low": 47.0
+ },
+ "land_rover_defender_90": {
+  "high": 101.2,
+  "idle": 53.5,
+  "low": 69.2
+ },
+ "mack_defense_m917": {
+  "high": 158.8,
+  "idle": 64.7,
+  "low": 44.3
+ },
+ "mack_pinnacle": {
+  "high": 158.8,
+  "idle": 64.9,
+  "low": 44.3
+ },
+ "mack_terra_pro": {
+  "high": 80.0,
+  "idle": 64.9,
+  "low": 40.0
+ },
+ "mercedes_benz_actros_6x6": {
+  "high": 81.3,
+  "idle": 42.0,
+  "low": 134.2
+ },
+ "mercedes_benz_zetros_6x6": {
+  "high": 105.0,
+  "idle": 60.9,
+  "low": 111.7
+ },
+ "mercer_6x6r_230": {
+  "high": 46.8,
+  "idle": 53.1,
+  "low": 44.3
+ },
+ "mercer_k520": {
+  "idle": 50.4,
+  "low": 40.3
+ },
+ "mtb_8106": {
+  "high": 49.2,
+  "idle": 57.2,
+  "low": 54.9
+ },
+ "navistar_500mv": {
+  "high": 41.2,
+  "idle": 64.8,
+  "low": 75.9
+ },
+ "neo_falcon_2000": {
+  "high": 90.0,
+  "idle": 66.4,
+  "low": 109.6
+ },
+ "pacific_p12w": {
+  "high": 49.5,
+  "idle": 48.0,
+  "low": 36.0
+ },
+ "pacific_p16": {
+  "high": 50.0,
+  "idle": 43.4,
+  "low": 53.0
+ },
+ "pacific_p512": {
+  "high": 35.8,
+  "idle": 120.2,
+  "low": 67.0
+ },
+ "plad_440": {
+  "high": 65.5,
+  "idle": 44.7,
+  "low": 94.8
+ },
+ "plad_450": {
+  "high": 45.5,
+  "idle": 39.0,
+  "low": 47.2
+ },
+ "rezvani": {
+  "high": 38.0,
+  "idle": 41.1,
+  "low": 39.0
+ },
+ "rezvani_tank": {
+  "high": 36.5,
+  "idle": 35.6,
+  "low": 78.0
+ },
+ "royal_bm17": {
+  "high": 39.8,
+  "idle": 35.7,
+  "low": 65.1
+ },
+ "sleiter_mfk816": {
+  "high": 50.9,
+  "idle": 36.3,
+  "low": 42.7
+ },
+ "sleiter_st833_chimera": {
+  "high": 39.8,
+  "idle": 42.4,
+  "low": 84.4
+ },
+ "step_310e": {
+  "high": 62.2,
+  "idle": 57.5,
+  "low": 51.5
+ },
+ "step_3364_crocodile": {
+  "high": 41.0,
+  "idle": 37.3,
+  "low": 47.3
+ },
+ "step_39331_pike": {
+  "high": 72.8,
+  "idle": 39.0,
+  "low": 58.8
+ },
+ "tatra_805": {
+  "high": 77.5,
+  "idle": 58.9,
+  "low": 36.2
+ },
+ "tatra_813": {
+  "high": 70.3,
+  "idle": 35.0,
+  "low": 49.8
+ },
+ "tatra_force": {
+  "high": 60.8,
+  "idle": 60.0,
+  "low": 43.7
+ },
+ "tatra_phoenix": {
+  "high": 35.5,
+  "idle": 75.8,
+  "low": 39.2
+ },
+ "tayga_6436": {
+  "high": 137.2,
+  "idle": 37.8,
+  "low": 44.3
+ },
+ "tayga_6455b": {
+  "high": 39.5,
+  "idle": 46.0,
+  "low": 97.0
+ },
+ "tuz_108_warthog": {
+  "high": 35.8,
+  "idle": 50.4,
+  "low": 36.5
+ },
+ "tuz_166": {
+  "high": 69.0,
+  "idle": 69.2,
+  "low": 69.5
+ },
+ "tuz_16_actaeon": {
+  "high": 38.0,
+  "idle": 42.5,
+  "low": 42.1
+ },
+ "tuz_420_tatarin": {
+  "high": 104.0,
+  "idle": 169.2,
+  "low": 60.2
+ },
+ "voron_ae4380": {
+  "high": 37.7,
+  "idle": 111.2,
+  "low": 104.0
+ },
+ "voron_d53233": {
+  "high": 37.1,
+  "idle": 45.2,
+  "low": 54.7
+ },
+ "voron_grad": {
+  "high": 48.2,
+  "idle": 35.0,
+  "low": 35.8
+ },
+ "western_star_49x": {
+  "high": 47.8,
+  "idle": 35.0,
+  "low": 40.5
+ },
+ "western_star_57x": {
+  "high": 85.4,
+  "idle": 52.8,
+  "low": 47.5
+ },
+ "western_star_nf1424": {
+  "high": 93.5,
+  "idle": 50.3,
+  "low": 40.8
+ },
+ "western_star_nf1430": {
+  "high": 160.1,
+  "idle": 42.4,
+  "low": 94.2
+ },
+ "ws_4964_white": {
+  "high": 101.2,
+  "idle": 42.3,
+  "low": 48.3
+ },
+ "ws_6900xd_twin": {
+  "high": 98.6,
+  "idle": 50.0,
+  "low": 56.5
+ },
+ "yar_87": {
+  "high": 65.3,
+  "idle": 39.2,
+  "low": 46.0
+ },
+ "ziks_5368": {
+  "high": 40.0,
+  "idle": 37.0,
+  "low": 36.6
+ },
+ "zikz_566a": {
+  "high": 44.8,
+  "idle": 43.8,
+  "low": 55.2
+ },
+ "zikz_605r": {
+  "high": 40.5,
+  "idle": 41.8,
+  "low": 73.8
+ },
+ "zikz_612h_mastodont": {
+  "high": 49.0,
+  "idle": 67.8,
+  "low": 77.3
+ }
+}
